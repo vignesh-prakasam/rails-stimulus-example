@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/75e52b2e-17e7-4a80-a1cf-3ed9d027abc1
 
  ```
     bundle install 
-    yarn install 
+    mkdir -p vendor/javascript
     rake db:create 
     rake db:migrate
     rails s
