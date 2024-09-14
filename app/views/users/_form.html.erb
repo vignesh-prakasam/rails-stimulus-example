@@ -1,0 +1,37 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div data-controller="checkbox-selectall">
+   <div>
+    <%= label_tag "select all"%>
+    <%= check_box_tag "select all" , false , false, data: { "action": "checkbox-selectall#selectAll", "checkbox-selectall-target": "selectall"} %>
+   </div> 
+    <% Interest.all.each do |interest| %>
+      <label>
+        <%= check_box_tag "user[interest_ids][]", interest.id, user.interests.include?(interest) , data: { "checkbox-selectall-target": "interest"} %>
+        <%= interest.name %>
+      </label>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+  <div>
+  
+<% end %>

@@ -1,0 +1,14 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= user.name %>
+  </p>
+
+  <h4>Interests</h4>
+  <ul>
+    <% user.interests.each do |interest| %>
+      <li><%= interest.name %></li>
+    <% end %>
+  </ul>  
+
+</div>
