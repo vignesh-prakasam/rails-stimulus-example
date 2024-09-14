@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This rails project gives a taste of Stimulus js. We use it to select all and unselect all checboxes. 
 
-Things you may want to cover:
 
-* Ruby version
+https://github.com/user-attachments/assets/75e52b2e-17e7-4a80-a1cf-3ed9d027abc1
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ ```
+    bundle install 
+    yarn install 
+    rake db:create 
+    rake db:migrate
+    rails s
+ ```
